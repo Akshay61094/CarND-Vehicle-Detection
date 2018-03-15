@@ -15,13 +15,13 @@ The goals / steps of this project are the following:
 * Estimate a bounding box for vehicles detected.
 
 [//]: # (Image References)
-[image1]: ./examples/car_not_car.png
-[image2]: ./examples/HOG_example.jpg
-[image3]: ./examples/sliding_windows.jpg
-[image4]: ./examples/sliding_window.jpg
-[image5]: ./examples/bboxes_and_heat.png
-[image6]: ./examples/labels_map.png
-[image7]: ./examples/output_bboxes.png
+[image1]: ./example_images/carncactual.JPG
+[image2]: ./example_images/carnotcar.JPG
+[image3]: ./example_images/window.JPG
+[image4]: ./example_images/wothreshold.JPG
+[image5]: ./example_images/threshold.JPG
+[image6]: ./example_images/label.JPG
+[image7]: ./example_images/final.JPG
 [video1]: ./project_video.mp4
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
@@ -111,15 +111,21 @@ After applying the window sizes on the mentioned regions , I then combined all t
 
 Below is an image of heatmap without threshold:
 
+![alt text][image4]
+
 After applying a threshold of 1 the image is shown below :
 
+![alt text][image5]
+
 After heatmap is generated we use scipy.ndimage.measurements.label() find out spatially contigous areas and assign a label.
+
+![alt text][image6]
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
 The following images show the final output of pipeline on all the test images :
 
-![alt text][image4]
+![alt text][image7]
 
 To Optimize the performance of the classifier the parameter pix_per_cel was changed from 8 to 16 which reduced the feature vector size and also increased the execution speed along with accuracy, also color space was changed from HLS to YCrCb.
 
