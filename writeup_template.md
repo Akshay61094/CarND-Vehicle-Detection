@@ -44,7 +44,7 @@ I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an 
 
 ![alt text][image1]
 
-I then tried different tried different values of the following parameters and visualize the result :
+I then tried different values of the following parameters and visualize the result :
 
 color_space
 
