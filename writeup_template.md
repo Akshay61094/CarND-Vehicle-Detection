@@ -85,7 +85,7 @@ hist_bins = 32
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
-I trained a linear SVM in the cell no 6  with comment 'Train Classifier'. The features extracted in the previous step were Standardized  by removing the mean and scaling to unit variance using a sklearn Scaler. Also the data was randomly shuffled and slpit into training and test data set for creating a classifier that generelises. After training i got a good training accuracy of 98.76% .
+I trained a linear SVM in the cell no 6  with comment 'Train Classifier'. The features extracted in the previous step were Standardized  by removing the mean and scaling to unit variance using a sklearn Scaler. Also the data was randomly shuffled and split into training and test data set for creating a classifier that generelises. After training i got a good training accuracy of 98.76% . I only used Hog features.
 
 ### Sliding Window Search
 
@@ -131,10 +131,12 @@ To Optimize the performance of the classifier the parameter pix_per_cel was chan
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
 Here's a [link to my video result](./project_video.mp4)
 
+The video pipeline is available in the code cell 19.
+
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
-For removing False positives and combining overlapping bounding boxes I took the combined heatmap of the last 10 frames and applied a threshold of 7 on the combined heatmap. After doing this the above problems were solved and a smooth bounding boxes were formed.
+For removing False positives and combining overlapping bounding boxes I took the combined heatmap of the last 10 frames and applied a threshold of 7 on the combined heatmap. After doing this the above problems were solved and a smooth bounding boxes were formed.The code is available in cell 18.
 
 
 
@@ -145,5 +147,5 @@ For removing False positives and combining overlapping bounding boxes I took the
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+The pipeline might fail in situations where vehicles probably dont resemble to those in dataset. Also in some cases the distant cars might not also be detected.
 
